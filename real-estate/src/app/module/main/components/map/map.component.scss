@@ -1,0 +1,174 @@
+.map-container {
+  width: 60%;
+  height: 100%;
+  position: absolute;
+}
+
+.add-btn {
+  button {
+    position: absolute;
+    bottom: 80px;
+    right: 80px;
+    background: #5faeff;
+    border-radius: 10px;
+    padding: 10px 20px;
+    border: 1px;
+    box-shadow: 0 0 5px #ccc;
+    display: flex;
+    font-weight: 600;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.4s;
+  }
+
+  button:hover {
+    transform: scale(1.1, 1.1);
+  }
+}
+
+.marker {
+  background-image: url(../../../../../assets/images/marker.png);
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.lbl {
+  font-size: 13px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: none;
+  margin-top: 20px;
+  .save-btn {
+    background: #5faeff;
+    color: white;
+    border: 1px;
+    padding: 7px 12px;
+    border-radius: 5px;
+    box-shadow: 0 0 3px #ccc;
+  }
+
+  .btn-danger {
+    box-shadow: 0 0 3px rgb(224, 140, 140);
+  }
+}
+
+.kvadratura {
+  margin-right: 10px;
+}
+
+input[type="checkbox"] {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  -webkit-appearance: none;
+  background: #c6c6c6;
+  outline: none;
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px rgba(255, 0, 0, 0.2);
+  transition: 0.7s;
+}
+
+input:checked[type="checkbox"] {
+  background: #0dbe66;
+}
+
+input[type="checkbox"]:before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  top: 0;
+  left: 0;
+  background: #ffffff;
+  transform: scale(1.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+}
+
+input:checked[type="checkbox"]:before {
+  left: 20px;
+}
+
+.chk {
+  margin-top: 20px;
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
+}
+
+.inpt-check {
+  margin-left: 20px;
+}
+
+.see-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #131313;
+}
+
+.up {
+  margin-top: 10px;
+}
+
+.euro {
+  position: absolute;
+  margin: 5px 11px;
+  font-size: 17px;
+  border-right: 1px grey solid;
+  padding-right: 7px;
+}
+
+.cash {
+  text-indent: 30px;
+}
+
+.modal-header {
+  flex-direction: column;
+}
+
+::ng-deep .suggestions-wrapper {
+  background: white;
+  border-radius: 5px;
+  border: 1px grey solid;
+}
+
+::ng-deep .mapboxgl-ctrl-geocoder--button {
+  /*border: 1px grey solid;
+  border-radius: 0 10px 10px 0;
+  background: white;
+  margin-left: -10px;*/
+  display: none;
+}
+
+::ng-deep .suggestions li {
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+::ng-deep .suggestions li:hover {
+  background: rgb(236, 236, 236);
+}
+
+::ng-deep .mapboxgl-ctrl-geocoder--icon-search {
+  position: absolute;
+  margin: 3px;
+}
+::ng-deep .mapboxgl-ctrl-geocoder--input {
+  width: 250px;
+  outline: none;
+  border: 1px grey solid;
+  text-indent: 20px;
+  border-radius: 5px;
+}

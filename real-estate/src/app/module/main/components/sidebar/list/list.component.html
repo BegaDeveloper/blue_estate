@@ -1,0 +1,97 @@
+<div class="filter-div">
+  <div class="btn-div">
+    <button
+      class="filter-button"
+      data-toggle="collapse"
+      href="#multiCollapseExample1"
+      role="button"
+      aria-expanded="false"
+      aria-controls="multiCollapseExample1"
+    >
+      <span class="material-symbols-outlined"> filter_alt </span>Filter
+    </button>
+  </div>
+  <div class="collapse multi-collapse" id="multiCollapseExample1">
+    <div class="card card-body filter-drop">
+      <form>
+        <!---Cijena-->
+        <div class="price">
+          <label class="form-label lbl">Cijena:</label>
+          <div class="flex">
+            <input
+              type="number"
+              class="form-control price price-min"
+              placeholder="min"
+            />
+            <div class="crta">-</div>
+            <input
+              type="number"
+              class="form-control price price-max"
+              placeholder="max"
+            />
+          </div>
+        </div>
+        <!---Godiste-->
+        <div class="price input-margin">
+          <label class="form-label lbl">Godina:</label>
+          <div class="flex">
+            <input
+              type="number"
+              class="form-control price price-min"
+              placeholder="min"
+            />
+            <div class="crta">-</div>
+            <input
+              type="number"
+              class="form-control price price-max"
+              placeholder="max"
+            />
+          </div>
+        </div>
+        <!---Grad-->
+        <div class="city input-margin">
+          <label class="lbl form-label">Grad:</label>
+          <select class="form-select" aria-label="Default select example">
+            <option selected></option>
+            <option>One</option>
+            <option>Two</option>
+            <option>Three</option>
+            <option>Four</option>
+          </select>
+        </div>
+        <!---Tip-->
+        <div class="type input-margin">
+          <label class="lbl form-label">Tip:</label>
+          <select class="form-select" aria-label="Default select example">
+            <option *ngFor="let type of kindOfEstate">{{ type.name }}</option>
+          </select>
+        </div>
+        <div class="submit-filter input-margin">
+          <button class="btn btn-primary save-filter">Snimi</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!---List of real estate--->
+<div class="main-list-div">
+  <div class="real-estate-card" *ngFor="let post of posts">
+    <div class="flex-apart">
+      <div class="description">
+        <div class="texts">
+          <p><span class="id-bold">1#</span></p>
+          <p>Tip: {{ post.typeEstate }}</p>
+          <p>Cijena: {{ post.price }}</p>
+          <p>Lokacija:</p>
+        </div>
+      </div>
+      <div class="image-div" *ngFor="let image of images">
+        <img
+          src="{{ 'http://localhost:3000/' + image }}"
+          width="150px"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
+</div>

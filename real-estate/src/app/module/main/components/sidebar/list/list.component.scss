@@ -1,0 +1,110 @@
+.filter-div {
+  background: #8fc6ff;
+  height: auto;
+  padding: 5px 15px;
+  position: absolute;
+  width: 40%;
+  .btn-div {
+    display: flex;
+    align-items: center;
+    .filter-button {
+      display: flex;
+      align-items: center;
+      border-radius: 6px;
+      padding: 3px 10px;
+      margin-left: 15px;
+      margin-top: 5px;
+      background: transparent;
+      border: 2px #ffffff solid;
+      color: #ffffff;
+      cursor: pointer;
+      box-shadow: 0 0 5px #ccc;
+      transition: all 0.4s;
+    }
+
+    .filter-button:hover {
+      background: #ffffff;
+      color: #8fc6ff;
+    }
+  }
+
+  .filter-drop {
+    border: none;
+    margin: 5px 0 10px 0;
+    .price {
+      max-width: 250px;
+      .crta {
+        margin: 0 10px;
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .lbl {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+  }
+  .input-margin {
+    margin-top: 10px;
+  }
+
+  .save-filter {
+    margin-top: 10px;
+    box-shadow: 0 0 5px #8fc6ff;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.main-list-div {
+  padding: 70px 20px 20px 20px;
+  background: #f3f2ef;
+  min-height: 88vh;
+  .real-estate-card {
+    border: 1px #d5d5d5 solid;
+    border-radius: 8px;
+    background: #ffffff;
+    padding: 20px;
+    box-shadow: 0 0 5px #b9b9b9;
+    transition: all 0.4s;
+    cursor: pointer;
+    margin-top: 10px;
+    .flex-apart {
+      display: flex;
+      justify-content: space-between;
+      .description {
+        display: flex;
+        align-items: center;
+        .texts {
+          .id-bold {
+            font-weight: 600;
+            font-size: 20px;
+          }
+          p {
+            margin: 0;
+          }
+        }
+      }
+      .image-div {
+        display: flex;
+        img {
+          border-radius: 5px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .real-estate-card:hover {
+    transform: scale(1.03, 1.03);
+  }
+}

@@ -1,0 +1,187 @@
+<div id="map" class="map-container"></div>
+<div class="add-btn">
+  <button data-toggle="modal" data-target="#exampleModal">
+    <span (click)="addChange()" class="material-symbols-outlined">
+      add_circle </span
+    >&nbsp;&nbsp; {{ openModal ? "Dodaj" : "Čekiraj lokaciju" }}
+  </button>
+</div>
+<!-- Modal -->
+<div
+  *ngIf="openModal"
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <h5 class="modal-title" id="exampleModalLabel">Dodaj nekretninu</h5>
+        </div>
+        <div *ngIf="town">
+          <h5 class="modal-title">Lokacija: {{ town }}</h5>
+        </div>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="estateForm" enctype="multipart/form-data">
+          <div class="form-group">
+            <label class="lbl" for="kind">Tip*</label>
+            <select
+              class="form-select"
+              id="kind"
+              aria-label="Default select example"
+              formControlName="typeSale"
+            >
+              <option [value]="tp.type" *ngFor="let tp of typeSale">
+                {{ tp.type }}
+              </option>
+            </select>
+          </div>
+          <div class="form-group up">
+            <label class="lbl" for="kind">Vrsta nekretnine*</label>
+            <select
+              class="form-select"
+              id="kind"
+              aria-label="Default select example"
+              formControlName="typeEstate"
+            >
+              <option [value]="kind.name" *ngFor="let kind of kindOfEstate">
+                {{ kind.name }}
+              </option>
+            </select>
+          </div>
+          <div class="form-group up">
+            <label class="lbl" for="kind">Cijena*</label>
+            <div class="flex">
+              <span class="euro">€</span>
+              <input
+                type="text"
+                class="form-control cash"
+                formControlName="price"
+              />
+            </div>
+          </div>
+          <div class="flex up">
+            <div class="form-group kvadratura">
+              <label class="lbl" for="kind">Kvadratura*</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="m2"
+                formControlName="meters"
+              />
+            </div>
+            <div class="form-group kvadratura">
+              <label class="lbl" for="kind">Broj soba*</label>
+              <input type="text" class="form-control" formControlName="rooms" />
+            </div>
+            <div class="form-group">
+              <label class="lbl" for="kind">Godina izgradnje*</label>
+              <input type="text" class="form-control" formControlName="year" />
+            </div>
+          </div>
+          <div class="form-group up">
+            <label class="lbl" for="kind">Dodaj slike*</label>
+            <input
+              type="file"
+              class="form-control"
+              (change)="onAddImage($event)"
+              multiple
+            />
+          </div>
+          <a
+            class="see-more"
+            data-toggle="collapse"
+            href="#collapseExample"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseExample"
+          >
+            See more
+            <span class="material-symbols-outlined"> expand_more </span>
+          </a>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+              <div class="form-group chk">
+                <div class="flex">
+                  <div>
+                    <label for="">Grijanje</label>
+                  </div>
+
+                  <div class="align-center">
+                    <input
+                      type="checkbox"
+                      class="inpt-check"
+                      formControlName="termostat"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="form-group chk">
+                <div class="flex">
+                  <div>
+                    <label for="">Kanalizacija</label>
+                  </div>
+
+                  <div class="align-center">
+                    <input
+                      type="checkbox"
+                      class="inpt-check"
+                      formControlName="drain"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="form-group chk">
+                <div class="flex">
+                  <div>
+                    <label for="">Ljubimci</label>
+                  </div>
+
+                  <div class="align-center">
+                    <input
+                      type="checkbox"
+                      class="inpt-check"
+                      formControlName="pets"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="form-group chk">
+                <div class="flex">
+                  <div>
+                    <label for="">Parking</label>
+                  </div>
+                  <div class="align-center">
+                    <input
+                      type="checkbox"
+                      class="inpt-check"
+                      formControlName="parking"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="save-btn"
+          data-dismiss="modal"
+          (click)="saveProperty()"
+        >
+          Sačuvaj
+        </button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          Zatvori
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

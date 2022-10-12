@@ -1,0 +1,38 @@
+.about-main {
+  .heading {
+    text-align: center;
+    p {
+      font-size: 25px;
+      font-weight: 600;
+      text-align: center;
+    }
+  }
+  .content {
+    text-align: center;
+    color: white;
+    border: 1px solid #5faeff;
+    box-shadow: 0 0 5px #188aff;
+    border-radius: 10px;
+    background: #5faeff;
+    padding: 20px;
+  }
+  .mobile-store {
+    img {
+      width: 160px;
+    }
+  }
+  footer {
+    width: 40%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    p {
+      font-size: 15px;
+      opacity: 0.8;
+    }
+  }
+}
+
+.pad {
+  padding: 20px;
+}

@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg">
+  <a class="navbar-brand" routerLink="/main/list">
+    <div>
+      <img src="../../../../../../assets/images/aaa.png" alt="" />
+    </div>
+  </a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" (click)="about()">O nama</a>
+      <a class="nav-item nav-link" (click)="listView()">Kako objaviti</a>
+      <ng-container>
+        <a class="nav-item nav-link" (click)="login()">Prijava</a>
+      </ng-container>
+      <ng-container>
+        <a class="nav-item nav-link" (click)="logoutUser()">Odjava</a>
+      </ng-container>
+    </div>
+  </div>
+</nav>

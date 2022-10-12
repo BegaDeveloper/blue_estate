@@ -1,0 +1,80 @@
+<div class="main-login-div">
+  <div class="back-div">
+    <button (click)="back()">
+      <span class="material-symbols-outlined"> arrow_back_ios_new </span>Nazad
+    </button>
+  </div>
+  <div class="container">
+    <div class="form-div">
+      <div class="transparent-div">
+        <div class="logo-div">
+          <img src="../../../assets/images/aaa.png" width="30px" alt="" />
+        </div>
+        <div class="txt-div">
+          <p class="welcome">Dobrodošli</p>
+          <p>
+            Objavite vašu nekretninu sa najnovijim tehnologijama i načinom
+            samoreklame. Na lak i brz nacin prodajte ili rentajte vasu
+            nekretninu.
+          </p>
+        </div>
+      </div>
+      <div class="login-div">
+        <div class="content-div">
+          <p>{{ loginMode ? "Prijavi se" : "Registuj se" }}</p>
+          <form [formGroup]="loginForm">
+            <div>
+              <div *ngIf="!loginMode">
+                <span class="material-symbols-outlined"> person </span
+                ><input
+                  type="text"
+                  class="form-control"
+                  placeholder="Ime i prezime"
+                  formControlName="name"
+                />
+              </div>
+              <div>
+                <span class="material-symbols-outlined"> alternate_email </span
+                ><input
+                  type="email"
+                  class="form-control"
+                  placeholder="Email"
+                  formControlName="email"
+                  (blur)="checkUserValid()"
+                />
+              </div>
+
+              <div *ngIf="!loginMode">
+                <span class="material-symbols-outlined"> call </span
+                ><input
+                  type="text"
+                  class="form-control"
+                  placeholder="Broj mobilnog"
+                  formControlName="mobile"
+                />
+              </div>
+              <div>
+                <span class="material-symbols-outlined"> password </span
+                ><input
+                  type="password"
+                  class="form-control"
+                  placeholder="Sifra"
+                  formControlName="password"
+                />
+              </div>
+              <div class="submit-div">
+                <button (click)="onSubmit()">Snimi</button>
+              </div>
+            </div>
+          </form>
+          <p class="switch-txt">
+            Nemate racun,
+            <a (click)="switchMode()">{{
+              loginMode ? "prijavi se" : "registuj se"
+            }}</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

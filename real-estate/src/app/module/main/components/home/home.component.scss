@@ -1,0 +1,12 @@
+.main-div {
+  .side {
+    width: 40%;
+    min-height: 100vh;
+    box-shadow: 0 0 3px #ccc;
+  }
+  .map {
+    min-height: 100vh;
+    width: 60%;
+    box-shadow: 0 0 5px #ccc;
+  }
+}
