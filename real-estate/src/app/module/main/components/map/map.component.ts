@@ -185,6 +185,8 @@ export class MapComponent implements OnInit {
     if (event.target.files && event.target.files[0]) {
       var filesAmount = event.target.files.length;
       for (let i = 0; i < filesAmount; i++) {
+        this.createImage(event.target.files[i]);
+        /*
         var reader = new FileReader();
 
         reader.onload = (event: any) => {
@@ -192,8 +194,8 @@ export class MapComponent implements OnInit {
 
           this.createImage(event.target.result);
         };
-
-        reader.readAsDataURL(event.target.files[i]);
+        
+        reader.readAsDataURL(event.target.files[i]);*/
       }
     }
 
