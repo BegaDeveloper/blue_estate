@@ -12,7 +12,23 @@ export class RealEstateService {
 
   //POST
   postRealEstate(data: any) {
-    return this.http.post(this.domain + '/realEstate/newEstate', data).pipe(
+    
+     const formData = new FormData();
+    
+    // ovdje ubaci form data append
+    // sve vrijednosti iz forme
+    // u formatu npr. 
+    // formData.append('name', data.name);
+    //
+    //i onda loop kroz fajlove
+    //data.files.forEach((file)=>{
+  //  formData.append('files[]', file);
+    //
+    //});
+    //
+    //
+    
+    return this.http.post(this.domain + '/realEstate/newEstate', formData).pipe(
       map((res) => {
         return res;
       })
