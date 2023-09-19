@@ -116,64 +116,6 @@ module.exports = (router) => {
       }
     });
   });
-  /*if (!req.body.email) {
-      res.json({ success: false, message: "No email provided" });
-    } else if (!req.body.password) {
-      res.json({ success: false, message: "No password provided" });
-    } else {
-      User.findOne({ email: req.body.email.toLowerCase() }, (err, user) => {
-        if (err) {
-          res.json({ success: false, message: err });
-        } else if (!req.body.email) {
-          res.json({ success: false, message: "User is not found" });
-        } else {
-          const validPassword = user.comparePassword(req.body.password);
-
-          if (!validPassword) {
-            res.json({ success: false, message: "Password doesnt match" });
-          } else {
-            const token = jwt.sign(
-              {
-                userid: newUser._id,
-              },
-              config.secret,
-              { expiresIn: "24h" }
-            );
-
-            res.json({
-              success: true,
-              message: "True",
-              token: token,
-              newUser: { name: newUser.name },
-            });
-          }
-        }
-      });
-    }*/
-
-  /*router.use((req, res, next) => {
-    const token = req.headers["authorization"];
-    if (!token) {
-      console.log(1);
-      res.json({ success: false, message: "No token provided" });
-    } else {
-      console.log(2);
-      jwt.verify(token, config.secret, (err, decoded) => {
-        if (err) {
-          console.log(3);
-          res.json({ success: false, message: "Token invalid " + err });
-        } else {
-          console.log(4);
-          req.decoded = decoded;
-          next();
-        }
-      });
-    }
-  });
-
-  router.get("/profile", (req, res) => {
-    res.send(req.decoded);
-  });*/
-
+ 
   return router;
 };
